@@ -1,4 +1,3 @@
-/* Reset */
 * { margin: 0; padding: 0; box-sizing: border-box; }
 html, body { height: 100%; }
 
@@ -8,11 +7,11 @@ body{
   color: #262626;
 }
 .header-logo {
-  height: 50px;   /* ← оптимальный размер как у Instagram */
+  height: 50px;   
   width: auto;
   display: block;
 }
-/* Main layout */
+/* мейн */
 .wrap{
   min-height: 100vh;
   max-width: 1200px;
@@ -72,7 +71,7 @@ body{
   filter: drop-shadow(0 22px 28px rgba(0,0,0,0.18));
 }
 
-/* RIGHT */
+/* правво */
 .right{
   width: 430px;
   padding-left: 48px;
@@ -101,7 +100,7 @@ body{
   background: #fff;
 }
 
-/* inputs */
+/* инпут */
 .field{ margin-top: 12px; }
 
 .input{
@@ -258,3 +257,4 @@ body{
     display: none;
   }
 }
+
