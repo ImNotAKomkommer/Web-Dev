@@ -13,7 +13,7 @@
 
   --link: #0969da;
 
-  --featured: #1f6feb; /* blue outline like "recommended" */
+  --featured: #1f6feb; 
 }
 
 body{
@@ -24,7 +24,7 @@ body{
 
 a{ color: inherit; }
 
-/* Utilities */
+/* утилиты */
 .container{
   width: min(1100px, 100%);
   margin: 0 auto;
@@ -35,7 +35,7 @@ a{ color: inherit; }
   padding-bottom: 72px;
 }
 
-/* Buttons */
+/* кнопки */
 .btn{
   display: inline-flex;
   align-items: center;
@@ -111,7 +111,7 @@ a{ color: inherit; }
   border-radius: 12px;
 }
 
-/* Pricing */
+/* прайсинг */
 .pricing{
   padding: 10px 0 56px;
 }
@@ -208,7 +208,7 @@ a{ color: inherit; }
   width: 100%;
 }
 
-/* Add-ons */
+/* аддоны */
 .addons{
   padding: 12px 0 0;
 }
@@ -290,8 +290,6 @@ a{ color: inherit; }
 .addon__link:hover{
   text-decoration: underline;
 }
-
-/* One breakpoint: mobile stacking */
 @media (max-width: 860px){
   .tiers{
     flex-direction: column;
@@ -313,3 +311,4 @@ a{ color: inherit; }
     padding-top: 48px;
   }
 }
+
