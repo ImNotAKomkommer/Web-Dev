@@ -1,0 +1,44 @@
+<header class="app-header">
+  <div class="container">
+    <h1>Online Store</h1>
+    <p>Browse products by category</p>
+  </div>
+</header>
+
+<main class="container page-content">
+  <section class="categories-section">
+    <h2>Categories</h2>
+
+    <div class="category-list">
+      @for (category of categories; track category.id) {
+        <button
+          class="category-btn"
+          type="button"
+          [class.active]="selectedCategory?.id === category.id"
+          (click)="selectCategory(category)"
+        >
+          {{ category.name }}
+        </button>
+      }
+    </div>
+  </section>
+
+  @if (selectedCategory) {
+    <section class="products-section">
+      <div class="section-header">
+        <h2>{{ selectedCategory.name }}</h2>
+        <p>{{ selectedProducts.length }} products</p>
+      </div>
+
+      <app-product-list
+        [products]="selectedProducts"
+        (deleteProduct)="handleDeleteProduct($event)"
+      ></app-product-list>
+    </section>
+  } @else {
+    <section class="welcome-box">
+      <h2>Welcome to the Online Store</h2>
+      <p>Please select a category to view products.</p>
+    </section>
+  }
+</main>

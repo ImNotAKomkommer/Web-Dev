@@ -1,0 +1,15 @@
+@if (products.length > 0) {
+  <section class="product-grid">
+    @for (product of products; track product.id) {
+      <app-product-item
+        [product]="product"
+        (deleteProduct)="handleDeleteProduct($event)"
+      ></app-product-item>
+    }
+  </section>
+} @else {
+  <div class="empty-state">
+    <h3>No products in this category</h3>
+    <p>All products were deleted or this category has no items.</p>
+  </div>
+}

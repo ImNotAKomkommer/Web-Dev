@@ -1,0 +1,78 @@
+<article class="product-card">
+  <div class="image-wrapper">
+    <img class="main-image" [src]="currentImage" [alt]="product.name" />
+
+    <button
+      class="gallery-btn gallery-btn-left"
+      type="button"
+      (click)="showPreviousImage()"
+    >
+      ‹
+    </button>
+
+    <button
+      class="gallery-btn gallery-btn-right"
+      type="button"
+      (click)="showNextImage()"
+    >
+      ›
+    </button>
+  </div>
+
+  <div class="thumbnail-row">
+    @for (image of product.images; track image; let i = $index) {
+      <button
+        class="thumbnail-button"
+        type="button"
+        [class.active]="i === currentImageIndex"
+        (click)="selectImage(i)"
+      >
+        <img [src]="image" [alt]="product.name + ' thumbnail ' + (i + 1)" />
+      </button>
+    }
+  </div>
+
+  <div class="card-content">
+    <h3>{{ product.name }}</h3>
+    <p class="description">{{ product.description }}</p>
+
+    <div class="meta-row">
+      <span class="price">{{ product.price | number:'1.0-0' }} ₸</span>
+      <span class="rating">
+        @for (star of getStars(); track $index) {
+          <span class="star">{{ star }}</span>
+        }
+        <span class="rating-value">{{ product.rating }}</span>
+      </span>
+    </div>
+
+    <p class="likes">❤ {{ product.likes }}</p>
+
+    <div class="button-row">
+      <a
+        class="action-btn primary-btn"
+        [href]="product.link"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Open on Kaspi
+      </a>
+
+      <button class="action-btn like-btn" type="button" (click)="likeProduct()">
+        Like
+      </button>
+
+      <button class="action-btn share-btn" type="button" (click)="openWhatsAppShare()">
+        WhatsApp
+      </button>
+
+      <button class="action-btn share-btn" type="button" (click)="openTelegramShare()">
+        Telegram
+      </button>
+
+      <button class="action-btn delete-btn" type="button" (click)="removeProduct()">
+        Delete
+      </button>
+    </div>
+  </div>
+</article>
