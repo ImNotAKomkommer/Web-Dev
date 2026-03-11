@@ -1,0 +1,189 @@
+.product-card {
+  display: flex;
+  flex-direction: column;
+  background: rgba(15, 23, 42, 0.92);
+  border: 1px solid rgba(148, 163, 184, 0.2);
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.25);
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.product-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(96, 165, 250, 0.5);
+  box-shadow: 0 18px 36px rgba(0, 0, 0, 0.35);
+}
+
+.image-wrapper {
+  position: relative;
+  background: #0f172a;
+}
+
+.main-image {
+  display: block;
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+}
+
+.gallery-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  border: none;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: rgba(15, 23, 42, 0.75);
+  color: #fff;
+  font-size: 1.4rem;
+  cursor: pointer;
+}
+
+.gallery-btn-left {
+  left: 10px;
+}
+
+.gallery-btn-right {
+  right: 10px;
+}
+
+.thumbnail-row {
+  display: flex;
+  gap: 8px;
+  padding: 10px 12px;
+  background: rgba(2, 6, 23, 0.7);
+}
+
+.thumbnail-button {
+  border: 2px solid transparent;
+  border-radius: 10px;
+  padding: 0;
+  overflow: hidden;
+  background: transparent;
+  cursor: pointer;
+}
+
+.thumbnail-button.active {
+  border-color: #60a5fa;
+}
+
+.thumbnail-button img {
+  display: block;
+  width: 64px;
+  height: 48px;
+  object-fit: cover;
+}
+
+.card-content {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  padding: 16px;
+  flex-grow: 1;
+}
+
+.card-content h3 {
+  margin: 0;
+  font-size: 1.1rem;
+  color: #f8fafc;
+}
+
+.description {
+  margin: 0;
+  color: #cbd5e1;
+  line-height: 1.5;
+  flex-grow: 1;
+}
+
+.meta-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.price {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #facc15;
+}
+
+.rating-block {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.stars {
+  display: inline-flex;
+  gap: 2px;
+}
+
+.star {
+  color: #64748b;
+  font-size: 1rem;
+}
+
+.star.filled {
+  color: #f59e0b;
+}
+
+.rating-value {
+  font-size: 0.95rem;
+  color: #e2e8f0;
+}
+
+.button-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.action-btn {
+  border: none;
+  border-radius: 12px;
+  padding: 10px 14px;
+  text-decoration: none;
+  font-weight: 600;
+  cursor: pointer;
+  transition:
+    opacity 0.2s ease,
+    transform 0.2s ease;
+}
+
+.action-btn:hover {
+  opacity: 0.92;
+  transform: translateY(-1px);
+}
+
+.primary-btn {
+  background: #2563eb;
+  color: #fff;
+}
+
+.share-btn {
+  background: #1e293b;
+  color: #e2e8f0;
+  border: 1px solid rgba(148, 163, 184, 0.25);
+}
+
+@media (max-width: 640px) {
+  .main-image {
+    height: 200px;
+  }
+
+  .button-row {
+    flex-direction: column;
+  }
+
+  .action-btn {
+    width: 100%;
+    text-align: center;
+  }
+}

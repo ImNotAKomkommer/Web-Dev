@@ -1,0 +1,91 @@
+<article class="product-card">
+  <div class="image-wrapper">
+    <img
+      class="main-image"
+      [src]="currentImage"
+      [alt]="product.name"
+    />
+
+    <button
+      class="gallery-btn gallery-btn-left"
+      type="button"
+      (click)="showPreviousImage()"
+      aria-label="Previous image"
+    >
+      ‹
+    </button>
+
+    <button
+      class="gallery-btn gallery-btn-right"
+      type="button"
+      (click)="showNextImage()"
+      aria-label="Next image"
+    >
+      ›
+    </button>
+  </div>
+
+  <div class="thumbnail-row">
+    @for (image of product.images; track image; let i = $index) {
+      <button
+        class="thumbnail-button"
+        type="button"
+        [class.active]="i === currentImageIndex"
+        (click)="selectImage(i)"
+      >
+        <img [src]="image" [alt]="product.name + ' thumbnail ' + (i + 1)" />
+      </button>
+    }
+  </div>
+
+  <div class="card-content">
+    <h3>{{ product.name }}</h3>
+    <p class="description">{{ product.description }}</p>
+
+    <div class="meta-row">
+      <span class="price">{{ product.price | number:'1.0-0' }} ₸</span>
+
+      <div class="rating-block">
+        <span class="stars">
+          @for (star of fullStars; track star) {
+            <span class="star filled">★</span>
+          }
+          @if (product.rating % 1 !== 0) {
+            <span class="star filled">★</span>
+          }
+          @for (star of emptyStars; track star) {
+            <span class="star">☆</span>
+          }
+        </span>
+        <span class="rating-value">{{ product.rating | number:'1.1-1' }}</span>
+      </div>
+    </div>
+
+    <div class="button-row">
+      <a
+        class="action-btn primary-btn"
+        [href]="product.link"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Open on Kaspi
+      </a>
+
+      <button
+        class="action-btn share-btn"
+        type="button"
+        (click)="openWhatsAppShare()"
+      >
+        Share WhatsApp
+      </button>
+
+      <button
+        class="action-btn share-btn"
+        type="button"
+        (click)="openTelegramShare()"
+      >
+        Share Telegram
+      </button>
+    </div>
+  </div>
+</article>
